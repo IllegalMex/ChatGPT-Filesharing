@@ -70,52 +70,59 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <title>Admin Area - ChatGPT File Sharing</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function checkAllBoxes() {
+            var checkBoxes = document.getElementsByName("deleteFiles[]");
+            for (var i = 0; i < checkBoxes.length; i++) {
+                checkBoxes[i].checked = document.getElementById("checkAll").checked;
+            }
+        }
+    </script>
+
 </head>
 <body>
     <h1>Admin-Portal - ChatGPT Filesharing</h1>
     <form action="admin.php" method="post">
-<label for="uploadFile">Detailsuche:</label>
+        <label for="uploadFile">Detailsuche:</label>
         <input type="text" name="filter" placeholder="Gebe Dateiname oder Dateilink ein...">
         <input type="submit" name="filterFiles" value="Filter">
     </form>
-<h2>Dateiliste:</h2>   
- <form action="admin.php" method="post">
+    <h2>Dateiliste:</h2>   
+    <form action="admin.php" method="post">
         <table>
-<thead>
-            <tr>
-                <th>Dateiname</th>
-                <th>Dateilink</th>
-                <th>hochgeladen am</th>
-                <th>Aktionen</th>
-                <th>Massenl&ouml;schung</th>
-            </tr>
-</thead>
-<tbody>
-            <?php while ($row = $result->fetch_assoc()): ?>
+            <thead>
                 <tr>
-                    <td><?php echo $row['filename']; ?></td>
-                    <td><?php echo $row['link']; ?></td>
-                    <td><?php echo date('d.m.Y', strtotime($row['upload_date'])); ?></td>
-                    <td>
-                        <a href="download.php?link=<?php echo $row['link']; ?>">Download</a> |
-                        <a href="delete.php?link=<?php echo $row['link']; ?>">L&ouml;schen</a>
-                    </td>
-                    <td>
-                        <input type="checkbox" name="deleteFiles[]" value="<?php echo $row['filename']; ?>">
-                    </td>
+                    <th>Dateiname</th>
+                    <th>Dateilink</th>
+                    <th>hochgeladen am</th>
+                    <th>Aktionen</th>
+                    <th>Massenl&ouml;schung</th>
                 </tr>
-            <?php
-endwhile; ?>
- </tbody>
+            </thead>
+            <tbody>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo $row['filename']; ?></td>
+                        <td><?php echo $row['link']; ?></td>
+                        <td><?php echo date('d.m.Y', strtotime($row['upload_date'])); ?></td>
+                        <td>
+                            <a href="download.php?link=<?php echo $row['link']; ?>">Download</a> |
+                            <a href="delete.php?link=<?php echo $row['link']; ?>">L&ouml;schen</a>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="deleteFiles[]" value="<?php echo $row['filename']; ?>">
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+<input type="submit" name="deleteFilesSubmit" value="L&ouml;sche ausgew&auml;hlte Dateien"><br><br>   
+<input type="checkbox" id="checkAll" name="checkAll" onclick="checkAllBoxes()"> Alle Datein zur Massenl&ouml;schung ausw&auml;hlen<br><br>
+
         </table>
- <input type="submit" name="deleteFilesSubmit" value="L&ouml;sche ausgew&auml;hlte Dateien">       
+    
     </form>
     <footer>
         &copy; 2023 ChatGPT | <a href="index.php">zur&uuml;ck</a> | <a href="changepassword.php">Passwort &auml;ndern</a> | <a href="logout.php">Logout</a>
     </footer>
 </body>
 </html>
-<?php
-// Close database connection
-$conn->close();
-?>
