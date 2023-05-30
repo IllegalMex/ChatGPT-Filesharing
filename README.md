@@ -1,61 +1,65 @@
-# ChatGPT-Filesharing
+# Simple PHP Filesharing
 
-Die Datei-Upload-Webanwendung ist eine einfache durch ChatGPT entwickelte Webanwendung, die es Benutzern ermöglicht, Dateien auf einen Server hochzuladen und Links zu diesen Dateien zu generieren, die dann geteilt werden können. Die Anwendung verfügt über ein Admin-Backend, in dem der Administrator die hochgeladenen Dateien verwalten und die Anwendung konfigurieren kann.
-## Funktionen
+The File Upload Web Application is a simple web application developed by ChatGPT that allows users to upload files to a server and generate links to those files that can then be shared. The application has an admin backend where the administrator can manage the uploaded files and configure the application.
 
-Datei-Upload: Benutzer können Dateien auf den Server hochladen.
-Eindeutige Links: Eindeutige Links werden automatisch generiert und den Benutzern zur Verfügung gestellt.
-Cookie-Unterstützung: Die Anwendung unterstützt Cookies, um den Benutzern zu ermöglichen, ihre hochgeladenen Dateien später wiederzufinden.
-Passwort ändern: Benutzer können ihr Passwort ändern.
-Admin-Backend: Der Administrator kann hochgeladene Dateien verwalten, Benutzerkonten verwalten und Einstellungen konfigurieren.
+## Features
 
-## Voraussetzungen
+* File upload: Users can upload files to the server.
+* Unique links: Unique links are automatically generated and provided to users.
+* Cookie support: The application supports cookies to allow users to find their uploaded files later.
+* Password change: Users can change their password.
+* Admin backend: The administrator can manage uploaded files, manage user accounts, and configure settings.
 
-* PHP 7 oder höher
-* MySQL oder eine andere Datenbank, die von PHP unterstützt wird
-* Schreibrechte für den Ordner data für das Speichern von hochgeladenen Dateien
+## Requirements
+
+* PHP 7 or higher
+* MySQL or another database supported by PHP
+* Write permissions for the data folder to store uploaded files
 
 ## Installation
 
-1. Laden Sie die Dateien von GitHub herunter.
-2. Kopieren Sie alle Dateien in das Verzeichnis, das für Ihre Webanwendung vorgesehen ist.
-3. Importieren Sie die database.sql-Datei in Ihre MySQL-Datenbank.
-4. Bearbeiten Sie die config.php-Datei, um die Datenbankinformationen und andere Einstellungen anzupassen.
-5. Öffnen Sie die Datei index.php in Ihrem Webbrowser und Sie sollten die Startseite der Anwendung sehen.
+1. Download the files from GitHub.
+2. Copy all files to the directory intended for your web application.
+3. Import the database.sql file into your MySQL database.
+4. Edit the config.php file to adjust the database information and other settings.
+5. Open the index.php file in your web browser and you should see the application's homepage.
 
-## Verwendung
-#### Hochladen von Dateien
+## Usage
 
-Öffnen Sie die Startseite der Anwendung.
-Klicken Sie auf die Schaltfläche "Datei auswählen" und wählen Sie die Datei aus, die Sie hochladen möchten.
-Klicken Sie auf die Schaltfläche "Hochladen".
-Ein eindeutiger Link zur hochgeladenen Datei wird generiert und auf der Seite angezeigt.
+#### Uploading files
 
-#### Verwalten von Dateien (nur für Administratoren)
+Open the application's homepage.
+Click the "Choose File" button and select the file you want to upload.
+Click the "Upload" button.
+A unique link to the uploaded file will be generated and displayed on the page.
 
-Öffnen Sie das Admin-Backend, indem Sie auf den Link "Admin" klicken.
-Melden Sie sich als Administrator an.
-Sie können jetzt hochgeladene Dateien anzeigen, herunterladen und löschen.
+#### Managing files (for administrators only)
 
-#### Passwort ändern
+Open the admin backend by clicking the "Admin" link.
+Log in as an administrator.
+You can now view, download, and delete uploaded files.
 
-Öffnen Sie die Seite "Passwort ändern".
-Geben Sie Ihr altes Passwort ein und wählen Sie ein neues Passwort. Das Standardpasswort ist 'admin123' für den Benutzer 'admin'.
-Klicken Sie auf die Schaltfläche "Passwort ändern".
-Ihr Passwort wird aktualisiert.
+#### Changing passwords
 
-## Anpassung
+Open the "Change Password" page.
+Enter your old password and choose a new password. The default password is 'admin123' for the user 'admin'.
+Click the "Change Password" button.
+Your password will be updated.
 
-Die Anwendung verwendet eine CSS-Datei namens style.css, die bearbeitet werden kann, um das Aussehen der Anwendung anzupassen.
-## Hinweise
+## Customization
 
-Dieses Projekt wurde erstellt mit Hilfe von ChatGPT. Es ist wichtig, dass Sie sicherstellen, dass keine illegalen Inhalte hochgeladen werden. Der Autor dieses Projekts (IllegalMex) übernimmt keine Haftung für die Nutzung dieses Projekts durch Dritte.
+The application uses a CSS file named style.css that can be edited to customize the look and feel of the application.
 
-Beim ersten Login ins Admin-Backend wird ein Standardpasswort verwendet. Es wird dringend empfohlen, das Passwort sofort nach dem ersten Login zu ändern, um die Sicherheit des Admin-Bereichs zu gewährleisten.
-    
-## Autor
+## Notes
 
-Dieses Skript wurde von ChatGPT erstellt, einem großen Sprachmodell, das auf der GPT-3.5-Architektur von OpenAI basiert.
-## Lizenz
+This project was created with the help of ChatGPT. It is important to ensure that no illegal content is uploaded. The author of this project (otterside) bears no liability for the use of this project by third parties.
 
-Dieses Skript ist unter der MIT-Lizenz veröffentlicht. Eine Kopie der Lizenz finden Sie in der Datei LICENSE.
+A default password is used for the first login to the admin backend. It is strongly recommended to change the password immediately after the first login to ensure the security of the admin area.
+  
+## Author
+
+This script was created by ChatGPT, a large language model based on the GPT-3.5 architecture by OpenAI.
+
+## License
+
+This script is released under the MIT license. A copy of the license can be found in the LICENSE file.
